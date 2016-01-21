@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package næstvedundgomsskole;
+package naestvedundgomsskole;
 
 /**
  *
  * @author Tanja
  */
-public class ComunitySchool {
-    
+public class Course {
+    private int weekday;
 }

@@ -1,5 +1,5 @@
 
-package næstvedundgomsskole;
+package naestvedundgomsskole;
 
 /**
  *
@@ -28,6 +28,6 @@ public class Student {
         return name;
     }
     public int getTelephone() {
-        
+        return telephone;
     }
 }
