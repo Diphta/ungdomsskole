@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package naestvedundgomsskole;
 
 /**
@@ -10,5 +6,19 @@ package naestvedundgomsskole;
  * @author Tanja
  */
 public class ClassRoom {
-    private String name;
+    private String roomName;
+
+    public ClassRoom(String roomName) {
+        this.roomName = roomName;
+    }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
+    }
+    
+    
 }
