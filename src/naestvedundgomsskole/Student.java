@@ -1,6 +1,8 @@
 
 package naestvedundgomsskole;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Tanja
@@ -13,6 +15,7 @@ public class Student {
     private String className;
     private String password;
     private String username;
+    private ArrayList<Course> course;
 
     public Student(String name, int telephone, int bYear, String school, String className, String password, String username) {
         this.name = name;
@@ -22,6 +25,7 @@ public class Student {
         this.className = className;
         this.password = password;
         this.username = username;
+        course = new ArrayList<>();
     }
 
     public String getName() {
