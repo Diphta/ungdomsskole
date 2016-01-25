@@ -10,6 +10,7 @@ import naestvedundgomsskole.*;
  */
 public class Gui_UNG extends javax.swing.JFrame {
     private Student testPerson;
+     private Student testPerson1;
     private Teacher teacher;
     private Course course;
     private ClassRoom classRoom;
@@ -19,10 +20,13 @@ public class Gui_UNG extends javax.swing.JFrame {
     public Gui_UNG() {
         initComponents();
         testPerson = new Student("Per", 92837465, 1994, "Næstved", "Klasse 1", "1234", "Per1234");
+        testPerson1 = new Student("Son", 92837465, 1995, "Næstved", "Klasse 1", "1234", "Son1234");
         teacher = new Teacher("Douglas");
         classRoom = new ClassRoom("Lokale 208");
         course = new Course(1, "Spansk", teacher, classRoom);
-        coursesBox.addItem(course.toString());
+        coursesBox.addItem(course);
+        course.addStudent(testPerson);
+        course.addStudent(testPerson1);
         
     }
 
@@ -125,6 +129,12 @@ public class Gui_UNG extends javax.swing.JFrame {
         studentInfo.setRows(5);
         jScrollPane1.setViewportView(studentInfo);
 
+        coursesBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coursesBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -174,9 +184,14 @@ public class Gui_UNG extends javax.swing.JFrame {
         studentInfo.setEditable(false);
         studentInfo.setText("Navn: " + testPerson.getName() + "\nTelefonnummer: " 
         + testPerson.getTelephone() + "\nFødselsår: " + testPerson.getbYear()
-        + "\nSkole: " + testPerson.getSchool() + "\nKlasse: " + testPerson.getClassName());
+        + "\nSkole: " + testPerson.getSchool() + "\nKlasse: " + testPerson.getClassName() + "\n");
         CardLayout cl = (CardLayout)jPanel1.getLayout();
         cl.next(jPanel1);
+        studentInfo.append("\n" + course.getCourseName() + "\nElever:\n");
+            for (Student student : course.getStudents()) {
+            studentInfo.append(student.getName() + "\n");
+            }
+        studentInfo.append("Ledige pladser: " + course.getSpots());
     }
       
     }//GEN-LAST:event_logindKnapActionPerformed
@@ -188,6 +203,10 @@ public class Gui_UNG extends javax.swing.JFrame {
     private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordFieldActionPerformed
+
+    private void coursesBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coursesBoxActionPerformed
+        
+    }//GEN-LAST:event_coursesBoxActionPerformed
 
     /**
      * @param args the command line arguments

@@ -2,6 +2,7 @@
 package naestvedundgomsskole;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -10,14 +11,15 @@ import java.util.ArrayList;
 public class Course {
     private int weekday;
     private String courseName;
-    private ArrayList<Student> student;
+    private ArrayList<Student> students;
     private Teacher teacher;
     private ClassRoom classRoom;
+    private int spots = 20;
 
     public Course(int weekday, String courseName, Teacher teacher, ClassRoom classRoom) {
         this.weekday = weekday;
         this.courseName = courseName;
-        student = new ArrayList<>();
+        students = new ArrayList<>();
         this.teacher = teacher;
         this.classRoom = classRoom;
     }
@@ -41,6 +43,27 @@ public class Course {
     public String toString() {
         return courseName + "\t" + classRoom.getRoomName() + "\t" + teacher.getName();
     }
+    
+    public void addStudent(Student student) {
+        if (students.size() >= spots) {
+            boolean failed = false;
+        } else {
+            students.add(student);
+            spots -= 1;
+        }
+    }
+
+    public int getSpots() {
+        return spots;
+    }
+    
+    
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+    
+    
     
     
     
