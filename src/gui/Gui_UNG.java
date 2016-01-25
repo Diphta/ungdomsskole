@@ -1,7 +1,8 @@
 package gui;
 
 import java.awt.CardLayout;
-import naestvedundgomsskole.Student;
+import naestvedundgomsskole.Course;
+import naestvedundgomsskole.*;
 
 /**
  *
@@ -9,12 +10,19 @@ import naestvedundgomsskole.Student;
  */
 public class Gui_UNG extends javax.swing.JFrame {
     private Student testPerson;
+    private Teacher teacher;
+    private Course course;
+    private ClassRoom classRoom;
     /**
      * Creates new form Gui_næstvedUNG
      */
     public Gui_UNG() {
         initComponents();
         testPerson = new Student("Per", 92837465, 1994, "Næstved", "Klasse 1", "1234", "Per1234");
+        teacher = new Teacher("Douglas");
+        classRoom = new ClassRoom("Lokale 208");
+        course = new Course(1, "Spansk", teacher, classRoom);
+        coursesBox.addItem(course.toString());
         
     }
 
@@ -38,7 +46,7 @@ public class Gui_UNG extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         studentInfo = new javax.swing.JTextArea();
-        jComboBox1 = new javax.swing.JComboBox();
+        coursesBox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,8 +125,6 @@ public class Gui_UNG extends javax.swing.JFrame {
         studentInfo.setRows(5);
         jScrollPane1.setViewportView(studentInfo);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -127,8 +133,8 @@ public class Gui_UNG extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addComponent(coursesBox, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +142,7 @@ public class Gui_UNG extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(coursesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
                 .addContainerGap())
@@ -220,7 +226,7 @@ public class Gui_UNG extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox coursesBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

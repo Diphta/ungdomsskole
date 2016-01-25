@@ -38,7 +38,9 @@ public class Course {
         this.courseName = courseName;
     }
     
-    
+    public String toString() {
+        return courseName + "\t" + classRoom.getRoomName() + "\t" + teacher.getName();
+    }
     
     
     
