@@ -46,7 +46,7 @@ public class Course {
     
     public void addStudent(Student student) {
         if (students.size() >= spots) {
-            boolean failed = false;
+            System.out.println("Ikke flere pladser, spasser");
         } else {
             students.add(student);
             spots -= 1;

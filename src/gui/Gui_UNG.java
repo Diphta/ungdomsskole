@@ -26,7 +26,7 @@ public class Gui_UNG extends javax.swing.JFrame {
         course = new Course(1, "Spansk", teacher, classRoom);
         coursesBox.addItem(course);
         course.addStudent(testPerson);
-        course.addStudent(testPerson1);
+        //course.addStudent(testPerson1);
         
     }
 
@@ -192,6 +192,7 @@ public class Gui_UNG extends javax.swing.JFrame {
             studentInfo.append(student.getName() + "\n");
             }
         studentInfo.append("Ledige pladser: " + course.getSpots());
+        course.addStudent(testPerson1);
     }
       
     }//GEN-LAST:event_logindKnapActionPerformed
