@@ -20,13 +20,13 @@ public class Gui_UNG extends javax.swing.JFrame {
      */
     public Gui_UNG() {
         initComponents();
-        testPerson = new Student("Per", 92837465, 1994, "Næstved", "Klasse 1", "1234", "Per1234");
-        testPerson1 = new Student("Son", 92837465, 1995, "Næstved", "Klasse 1", "1234", "Son1234");
+//        testPerson = new Student("Per", 92837465, 1994, "Næstved", "Klasse 1", "1234", "Per1234");
+//        testPerson1 = new Student("Son", 92837465, 1995, "Næstved", "Klasse 1", "1234", "Son1234");
         teacher = new Teacher("Douglas");
         classRoom = new ClassRoom("Lokale 208");
         course = new Course(1, "Spansk", teacher, classRoom);
         coursesBox.addItem(course);
-        course.addStudent(testPerson);
+//        course.addStudent(testPerson);
         //course.addStudent(testPerson1);
         
     }

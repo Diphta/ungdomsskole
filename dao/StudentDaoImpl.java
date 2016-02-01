@@ -25,7 +25,7 @@ public class StudentDaoImpl {
     
     
     public void deleteStudent(Student student){
-        //students.remove(student.getRollNo());
+        students.remove(student.getRollNo());
     }
     
     public ArrayList<Student> getAllStudents() {
@@ -37,6 +37,6 @@ public class StudentDaoImpl {
     }
     
     public void updateStudent(Student student) {
-        //students.get(student.getRollNo().setName(student.getName());
+        students.get(student.getRollNo()).setName(student.getName());
     }
 }

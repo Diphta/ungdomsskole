@@ -16,9 +16,10 @@ public class Student {
     private String className;
     private String password;
     private String username;
+    private int rollNo;
     private ArrayList<Course> course;
 
-    public Student(String name, int telephone, int bYear, String school, String className, String password, String username) {
+    public Student(int rollNo, String name, int telephone, int bYear, String school, String className, String password, String username) {
         this.name = name;
         this.telephone = telephone;
         this.bYear = bYear;
@@ -26,6 +27,7 @@ public class Student {
         this.className = className;
         this.password = password;
         this.username = username;
+        this.rollNo = rollNo;
         course = new ArrayList<>();
     }
 
@@ -83,6 +85,14 @@ public class Student {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
     }
     
     
