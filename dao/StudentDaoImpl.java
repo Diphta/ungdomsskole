@@ -19,9 +19,13 @@ public class StudentDaoImpl {
         students = new ArrayList<>();
     }
     
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+    
     
     public void deleteStudent(Student student){
-        
+        //students.remove(student.getRollNo());
     }
     
     public ArrayList<Student> getAllStudents() {
