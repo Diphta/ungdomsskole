@@ -13,7 +13,7 @@ import naestvedundgomsskole.Student;
  * @author philip
  */
 public class StudentDaoImpl {
-    ArrayList<Student> students;
+    static ArrayList<Student> students;
     
     public StudentDaoImpl() {
         students = new ArrayList<>();
@@ -39,4 +39,7 @@ public class StudentDaoImpl {
     public void updateStudent(Student student) {
         students.get(student.getRollNo()).setName(student.getName());
     }
+
+    
+    
 }

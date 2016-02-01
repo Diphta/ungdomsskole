@@ -1,9 +1,14 @@
 package gui;
 
+import handlers.StudentHandler;
 import java.awt.CardLayout;
 import naestvedundgomsskole.Course;
 import naestvedundgomsskole.*;
 import naestvedundgomsskole.Student;
+import dao.StudentDaoImpl;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -179,22 +184,11 @@ public class Gui_UNG extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logindKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logindKnapActionPerformed
-        String username = usernameField.getText();
-        String password = passwordField.getText();
-        if (username.equals(testPerson.getUsername()) && password.equals(testPerson.getPassword())) {
-        studentInfo.setEditable(false);
-        studentInfo.setText("Navn: " + testPerson.getName() + "\nTelefonnummer: " 
-        + testPerson.getTelephone() + "\nFødselsår: " + testPerson.getbYear()
-        + "\nSkole: " + testPerson.getSchool() + "\nKlasse: " + testPerson.getClassName() + "\n");
-        CardLayout cl = (CardLayout)jPanel1.getLayout();
-        cl.next(jPanel1);
-        studentInfo.append("\n" + course.getCourseName() + "\nElever:\n");
-            for (Student student : course.getStudents()) {
-            studentInfo.append(student.getName() + "\n");
-            }
-        studentInfo.append("Ledige pladser: " + course.getSpots());
-        course.addStudent(testPerson1);
-    }
+        StudentHandler.getInstance();
+        StudentDaoImpl ss = new StudentDaoImpl();
+        for (Student student : ss.getAllStudents()) {
+            System.out.println(student.getName());
+        }
       
     }//GEN-LAST:event_logindKnapActionPerformed
 
