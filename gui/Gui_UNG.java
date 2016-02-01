@@ -3,6 +3,7 @@ package gui;
 import java.awt.CardLayout;
 import naestvedundgomsskole.Course;
 import naestvedundgomsskole.*;
+import naestvedundgomsskole.Student;
 
 /**
  *
