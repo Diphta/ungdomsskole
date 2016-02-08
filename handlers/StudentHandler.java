@@ -97,9 +97,9 @@ public class StudentHandler {
                "','" + student.getUsername()+")";
        
        try {
-           conn.createStatement().executeQuery(statement);
+           conn.createStatement().executeUpdate(statement);
        } catch (SQLException ex) {
-           System.out.println("SQLException");
+           System.out.println("SQLException" + ex.getMessage());
        }
              
     }
