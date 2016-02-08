@@ -63,8 +63,11 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="logindKnap" min="-2" max="-2" attributes="0"/>
                                           <Component id="passwordField" min="-2" pref="213" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="logindKnap" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="createStudentPageButton" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -96,7 +99,9 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="logindKnap" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="createStudentPageButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -136,6 +141,14 @@
             <Component class="javax.swing.JPasswordField" name="passwordField">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordFieldActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="createStudentPageButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Opret bruger"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createStudentPageButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -199,6 +212,111 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="coursesBoxActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel4">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card4"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="nameField" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
+                          <Component id="phonenumberField" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
+                          <Component id="birthyearField" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="passwordCreateField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="usernameCreateField" alignment="0" pref="164" max="32767" attributes="0"/>
+                                  <Component id="schoolField" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="classField" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="378" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="createStudentButton" min="-2" pref="111" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="nameField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="phonenumberField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="birthyearField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="schoolField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="classField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="usernameCreateField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="passwordCreateField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="createStudentButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="193" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JTextField" name="nameField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="navn"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="phonenumberField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="tlf"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="birthyearField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="f&#xf8;dselsdato"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="schoolField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Skole"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="classField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="klasse"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="usernameCreateField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bruger navn"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="passwordCreateField">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kode"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="createStudentButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Opret bruger"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createStudentButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

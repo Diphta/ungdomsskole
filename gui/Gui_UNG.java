@@ -53,10 +53,20 @@ public class Gui_UNG extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
+        createStudentPageButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         studentInfo = new javax.swing.JTextArea();
         coursesBox = new javax.swing.JComboBox();
+        jPanel4 = new javax.swing.JPanel();
+        nameField = new javax.swing.JTextField();
+        phonenumberField = new javax.swing.JTextField();
+        birthyearField = new javax.swing.JTextField();
+        schoolField = new javax.swing.JTextField();
+        classField = new javax.swing.JTextField();
+        usernameCreateField = new javax.swing.JTextField();
+        passwordCreateField = new javax.swing.JTextField();
+        createStudentButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,6 +98,13 @@ public class Gui_UNG extends javax.swing.JFrame {
             }
         });
 
+        createStudentPageButton.setText("Opret bruger");
+        createStudentPageButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createStudentPageButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -103,8 +120,10 @@ public class Gui_UNG extends javax.swing.JFrame {
                                 .addComponent(jLabel2))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(logindKnap)
-                                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(logindKnap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(createStudentPageButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel3))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -126,7 +145,9 @@ public class Gui_UNG extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(logindKnap)
-                .addGap(142, 142, 142))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(createStudentPageButton)
+                .addGap(107, 107, 107))
         );
 
         jPanel1.add(jPanel2, "card2");
@@ -166,6 +187,73 @@ public class Gui_UNG extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, "card3");
 
+        nameField.setText("navn");
+
+        phonenumberField.setText("tlf");
+
+        birthyearField.setText("fødselsdato");
+
+        schoolField.setText("Skole");
+
+        classField.setText("klasse");
+
+        usernameCreateField.setText("Bruger navn");
+
+        passwordCreateField.setText("Kode");
+
+        createStudentButton.setText("Opret bruger");
+        createStudentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createStudentButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phonenumberField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(birthyearField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(passwordCreateField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(usernameCreateField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                            .addComponent(schoolField, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(classField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(378, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(createStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phonenumberField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(birthyearField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(schoolField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(classField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(usernameCreateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(passwordCreateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(createStudentButton)
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel4, "card4");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -204,6 +292,17 @@ public class Gui_UNG extends javax.swing.JFrame {
         
     }//GEN-LAST:event_coursesBoxActionPerformed
 
+    private void createStudentPageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentPageButtonActionPerformed
+        CardLayout cl = (CardLayout) jPanel1.getLayout();
+        cl.addLayoutComponent("create", jPanel4);
+        cl.show(jPanel1, "create");   
+    }//GEN-LAST:event_createStudentPageButtonActionPerformed
+
+    private void createStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButtonActionPerformed
+        StudentHandler.getInstance();
+        
+    }//GEN-LAST:event_createStudentButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -241,17 +340,27 @@ public class Gui_UNG extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField birthyearField;
+    private javax.swing.JTextField classField;
     private javax.swing.JComboBox coursesBox;
+    private javax.swing.JButton createStudentButton;
+    private javax.swing.JButton createStudentPageButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton logindKnap;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JTextField passwordCreateField;
     private javax.swing.JPasswordField passwordField;
+    private javax.swing.JTextField phonenumberField;
+    private javax.swing.JTextField schoolField;
     private javax.swing.JTextArea studentInfo;
+    private javax.swing.JTextField usernameCreateField;
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables
 }

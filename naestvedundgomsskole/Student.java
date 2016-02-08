@@ -95,5 +95,10 @@ public class Student {
         this.rollNo = rollNo;
     }
     
+    @Override
+    public String toString() {
+        return name;
+    }
+    
     
 }
