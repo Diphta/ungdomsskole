@@ -67,6 +67,7 @@ public class Gui_UNG extends javax.swing.JFrame {
         usernameCreateField = new javax.swing.JTextField();
         passwordCreateField = new javax.swing.JTextField();
         createStudentButton = new javax.swing.JButton();
+        rollNoField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -208,10 +209,15 @@ public class Gui_UNG extends javax.swing.JFrame {
             }
         });
 
+        rollNoField.setText("RollNo");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(createStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,11 +230,9 @@ public class Gui_UNG extends javax.swing.JFrame {
                             .addComponent(usernameCreateField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                             .addComponent(schoolField, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(classField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(classField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rollNoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(378, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(createStudentButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,8 +252,10 @@ public class Gui_UNG extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordCreateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rollNoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(createStudentButton)
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel4, "card4");
@@ -272,7 +278,15 @@ public class Gui_UNG extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logindKnapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logindKnapActionPerformed
-        StudentHandler.getInstance();
+       
+        try {
+            StudentHandler.getInstance().getStudentsDB();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Gui_UNG.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Gui_UNG.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         StudentDaoImpl ss = new StudentDaoImpl();
         for (Student student : ss.getAllStudents()) {
             System.out.println(student.getName());
@@ -299,8 +313,9 @@ public class Gui_UNG extends javax.swing.JFrame {
     }//GEN-LAST:event_createStudentPageButtonActionPerformed
 
     private void createStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButtonActionPerformed
-        StudentHandler.getInstance();
-        
+        Student student = new Student(4, nameField.getText(), Integer.parseInt(phonenumberField.getText()), Integer.parseInt(birthyearField.getText()), 
+        schoolField.getText(), classField.getText(), passwordCreateField.getText(), usernameCreateField.getText());
+        StudentHandler.getInstance().saveStudentDB(student);
     }//GEN-LAST:event_createStudentButtonActionPerformed
 
     /**
@@ -358,6 +373,7 @@ public class Gui_UNG extends javax.swing.JFrame {
     private javax.swing.JTextField passwordCreateField;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField phonenumberField;
+    private javax.swing.JTextField rollNoField;
     private javax.swing.JTextField schoolField;
     private javax.swing.JTextArea studentInfo;
     private javax.swing.JTextField usernameCreateField;

@@ -84,4 +84,23 @@ public class StudentHandler {
                     
         }
     }
+    
+    public void saveStudentDB (Student student) {
+       String statement;
+       statement = "INSERT INTO students (studentName, studentTlf, birthYear, school, className, stPassword, stUsername)"
+               + " VALUES ( '" + student.getName()+
+               "','" + student.getTelephone()+
+               "','" + student.getbYear()+
+               "','" + student.getSchool()+
+               "','" + student.getClassName()+
+               "','" + student.getPassword()+
+               "','" + student.getUsername()+")";
+       
+       try {
+           conn.createStatement().executeQuery(statement);
+       } catch (SQLException ex) {
+           System.out.println("SQLException");
+       }
+             
+    }
 }
