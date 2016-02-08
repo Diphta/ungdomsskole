@@ -22,26 +22,12 @@ import naestvedundgomsskole.Student;
 public class StudentHandler {
     private static StudentHandler instance;
     StudentDaoImpl listig;
-    Connection conn;
     PreparedStatement prestm = null;
     
-    String url = "jdbc:mysql://localhost:3306";
-    String user = "root";
-    String pswrd = "root";
-    String schema = "/UngdomsskoleNaestved";
-    String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+   
     
     private StudentHandler() {
         listig = new StudentDaoImpl();
-        try {
-            connect();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(StudentHandler.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Class not found exception");
-        } catch (SQLException ex) {
-            Logger.getLogger(StudentHandler.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("SQL exception");
-        }
     }
     
     public static StudentHandler getInstance() {
@@ -51,28 +37,12 @@ public class StudentHandler {
         return instance;
     }
     
-    public void connect() throws ClassNotFoundException, SQLException {
-        try { 
-        Class.forName(JDBC_DRIVER);
-        conn = DriverManager.getConnection(url + schema, user, pswrd);
-        
-           
-//        prestm.setInt(1, id);
-//        prestm.setString(2, author);
-//        int rowsUpdate = prestm.executeUpdate();
-       
-        
-        
-    } catch (SQLException e) {
-    //TODO Auto-generate catch block
-    e.printStackTrace();
-    }
-    }
     
-    public void getStudentsDB() throws ClassNotFoundException, SQLException {
+        
+        public void getStudentsDB() throws ClassNotFoundException, SQLException {
         String stmnt = "SELECT * FROM students;";
         
-        prestm = conn.prepareStatement(stmnt);
+        prestm = DBHandler.getInstance().conn.prepareStatement(stmnt);
         ResultSet rs = prestm.executeQuery(stmnt);
         
         while (rs.next()) {
@@ -97,7 +67,7 @@ public class StudentHandler {
                "','" + student.getUsername()+"')";
        
        try {
-           conn.createStatement().executeUpdate(statement);
+           DBHandler.getInstance().conn.createStatement().executeUpdate(statement);
        } catch (SQLException ex) {
            System.out.println(statement);
            System.out.println("SQLException" + ex.getMessage());
