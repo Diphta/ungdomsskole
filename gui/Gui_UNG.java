@@ -315,65 +315,65 @@ public class Gui_UNG extends javax.swing.JFrame {
     }//GEN-LAST:event_createStudentPageButtonActionPerformed
 
     private void createStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButtonActionPerformed
-        boolean createStudentFail = false;
-
-        if (nameField.getText().matches("[a-z]+[A-Z]")) {
-            nameField.setBorder(null);
-            nameField.updateUI();
-        } else {
-            createStudentFail = true;
-            nameField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
-        }
-            if (phonenumberField.getText().matches("[0-9]") && phonenumberField.getText().length() == 8) {
-                phonenumberField.setBorder(null);
-                phonenumberField.updateUI();
-            } else {
-                createStudentFail = true;
-                phonenumberField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
-            }
-                if (birthyearField.getText().matches("[0-9]") && birthyearField.getText().length() == 4) {
-                    birthyearField.setBorder(null);
-                    birthyearField.updateUI();
-                } else {
-                    createStudentFail = true;
-                    birthyearField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
-                }
-                    if (schoolField.getText().matches("[a-z]+[A-Z]")) {
-                        schoolField.setBorder(null);
-                        schoolField.updateUI();
-                    } else {
-                        createStudentFail = true;
-                        schoolField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
-                    }
-                        if (classField.getText().matches("[a-z]+[A-Z]+[0-9]") && classField.getText().length() == 2) {
-                            classField.setBorder(null);
-                            classField.updateUI();
-                        } else {
-                            createStudentFail = true;
-                            classField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
-                        }
-                            if (usernameCreateField.getText().matches("[a-z]+[A-Z]+[0-9]") && usernameCreateField.getText().length() >= 15) {
-                                usernameCreateField.setBorder(null);
-                                usernameCreateField.updateUI();
-                            } else {
-                                createStudentFail = true;
-                                usernameCreateField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
-                            }
-                                if (passwordCreateField.getText().matches("[a-z]+[A-Z]+[0-9]") && passwordCreateField.getText().length() >= 20) {
-                                    passwordCreateField.setBorder(null);
-                                    passwordCreateField.updateUI();
-                                } else {
-                                    createStudentFail = true;
-                                    passwordCreateField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
-                                }
-                                
-                                if (rollNoField.getText().matches("[0-9]")&& rollNoField.getText().length() >=200) {
-                                    rollNoField.setBorder(null);
-                                    rollNoField.updateUI();
-                                } else {
-                                    createStudentFail = true;
-                                    rollNoField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
-                                }
+//        boolean createStudentFail = false;
+//
+//        if (nameField.getText().matches("[a-z]+[A-Z]")) {
+//            nameField.setBorder(null);
+//            nameField.updateUI();
+//        } else {
+//            createStudentFail = true;
+//            nameField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
+//        }
+//            if (phonenumberField.getText().matches("[0-9]") && phonenumberField.getText().length() == 8) {
+//                phonenumberField.setBorder(null);
+//                phonenumberField.updateUI();
+//            } else {
+//                createStudentFail = true;
+//                phonenumberField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
+//            }
+//                if (birthyearField.getText().matches("[0-9]") && birthyearField.getText().length() == 4) {
+//                    birthyearField.setBorder(null);
+//                    birthyearField.updateUI();
+//                } else {
+//                    createStudentFail = true;
+//                    birthyearField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
+//                }
+//                    if (schoolField.getText().matches("[a-z]+[A-Z]")) {
+//                        schoolField.setBorder(null);
+//                        schoolField.updateUI();
+//                    } else {
+//                        createStudentFail = true;
+//                        schoolField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
+//                    }
+//                        if (classField.getText().matches("[a-z]+[A-Z]+[0-9]") && classField.getText().length() == 2) {
+//                            classField.setBorder(null);
+//                            classField.updateUI();
+//                        } else {
+//                            createStudentFail = true;
+//                            classField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
+//                        }
+//                            if (usernameCreateField.getText().matches("[a-z]+[A-Z]+[0-9]") && usernameCreateField.getText().length() >= 15) {
+//                                usernameCreateField.setBorder(null);
+//                                usernameCreateField.updateUI();
+//                            } else {
+//                                createStudentFail = true;
+//                                usernameCreateField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
+//                            }
+//                                if (passwordCreateField.getText().matches("[a-z]+[A-Z]+[0-9]") && passwordCreateField.getText().length() >= 20) {
+//                                    passwordCreateField.setBorder(null);
+//                                    passwordCreateField.updateUI();
+//                                } else {
+//                                    createStudentFail = true;
+//                                    passwordCreateField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
+//                                }
+//                                
+//                                if (rollNoField.getText().matches("[0-9]")&& rollNoField.getText().length() >=200) {
+//                                    rollNoField.setBorder(null);
+//                                    rollNoField.updateUI();
+//                                } else {
+//                                    createStudentFail = true;
+//                                    rollNoField.setBorder(BorderFactory.createLineBorder(Color.decode("#ff0000")));
+//                                }
         Student student = new Student(4, nameField.getText(), Integer.parseInt(phonenumberField.getText()), Integer.parseInt(birthyearField.getText()), 
         schoolField.getText(), classField.getText(), passwordCreateField.getText(), usernameCreateField.getText());
         StudentHandler.getInstance().saveStudentDB(student);

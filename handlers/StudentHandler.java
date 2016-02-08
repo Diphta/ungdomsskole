@@ -94,11 +94,12 @@ public class StudentHandler {
                "','" + student.getSchool()+
                "','" + student.getClassName()+
                "','" + student.getPassword()+
-               "','" + student.getUsername()+")";
+               "','" + student.getUsername()+"')";
        
        try {
            conn.createStatement().executeUpdate(statement);
        } catch (SQLException ex) {
+           System.out.println(statement);
            System.out.println("SQLException" + ex.getMessage());
        }
              
